@@ -3,7 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"encoding/json"
-	"newApp/models"
+	"go_blog/models"
 	"fmt"
 )
 type UserControllers struct {
