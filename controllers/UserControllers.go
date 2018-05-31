@@ -20,7 +20,6 @@ func (c *UserControllers ) Creat() {
 	// models.SaveUser(&user)
 	form := models.User{}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &form)
-    fmt.Println("-jsoninfojsoninfojsoninfo--",form.Username)
 	c.Ctx.WriteString("Creat")
 }
 //查询用户 
