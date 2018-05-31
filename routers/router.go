@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"newApp/controllers"
+	"go_blog/controllers"
 	"github.com/astaxie/beego"
 )
 
@@ -13,5 +13,4 @@ func init() {
 	beego.Router("/user", &controllers.UserControllers{}, "POST:Creat")
     beego.Router("/user", &controllers.UserControllers{}, "PUT:Update")
     beego.Router("/user", &controllers.UserControllers{}, "DELETE:Delete")
-	
 }

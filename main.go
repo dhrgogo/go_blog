@@ -4,9 +4,9 @@ import (
     // "fmt"
     "github.com/astaxie/beego"
     "github.com/astaxie/beego/orm"
-    "newApp/models"
+    "go_blog/models"
     _ "github.com/lib/pq"
-    _ "newApp/routers"
+    _ "go_blog/routers"
 )
 
 func init(){
