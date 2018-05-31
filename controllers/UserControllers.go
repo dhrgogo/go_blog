@@ -41,6 +41,4 @@ func (c *UserControllers) Update() {
 func (c *UserControllers) Delete() {
 	c.Data["json"] = map[string]interface{}{"success": 0, "message": "111"}
 	c.ServeJSON()
-	// c.Ctx.WriteString("Delete")
-	// fmt.Println("Delete")
 }
