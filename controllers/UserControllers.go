@@ -12,19 +12,20 @@ type UserControllers struct {
 
 //创建用户
 func (c *UserControllers ) Creat() {
-	// user := models.User{
-	// 	Username:"dhr",
-	// 	Password:"616011986",
-	// 	Token:"110110",
-	// 	}
-	// models.SaveUser(&user)
 	form := models.User{}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &form)
-	c.Ctx.WriteString("Creat")
+	models.SaveUser(&form)
+	c.Data["json"] = map[string]interface{}{"ErrCode": 0, "Result": &form}
+	c.ServeJSON()
 }
 //查询用户 
 func (c *UserControllers) Search() {
-	ok, user := models.FindUserByToken("110110")
+	token := c.GetString("token")
+	if token == "" {
+		c.Ctx.WriteString("token is empty");
+		return
+	}
+	ok, user := models.FindUserByToken(token)
 	// c.Ctx.WriteString("Search")
 	mystruct := user
     c.Data["json"] = map[string]interface{}{"ErrCode": 0, "Result": mystruct}
@@ -33,8 +34,11 @@ func (c *UserControllers) Search() {
 }
 //更新用户
 func (c *UserControllers) Update() {
-	c.Ctx.WriteString("Update")
-	fmt.Println("Update")
+	form := models.User{}
+	json.Unmarshal(c.Ctx.Input.RequestBody, &form)
+	models.UpdateUser(&form)
+	c.Data["json"] = map[string]interface{}{"ErrCode": 0, "Result": &form}
+	c.ServeJSON()
 }
 //删除用户
 func (c *UserControllers) Delete() {
