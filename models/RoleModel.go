@@ -1,8 +1,3 @@
-/**
- * User: yp
- * Time: 2018/5/25  上午11:48
- */
-
 package models
 
 import (

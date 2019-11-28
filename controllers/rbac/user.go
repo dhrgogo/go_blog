@@ -1,8 +1,3 @@
-/**
- * User: yp
- * Time: 2018/5/29  下午5:51
- */
-
 package rbac
 
 import (

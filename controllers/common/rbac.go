@@ -1,8 +1,3 @@
-/**
- * User: yp
- * Time: 2018/5/28  上午10:44
- */
-
 package common
 
 import (
