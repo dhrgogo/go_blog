@@ -3,24 +3,23 @@ package models
 import (
 	"database/sql"
 	"fmt"
-	"log"
-	"os"
-
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
+	"log"
+	"os"
 	//_ "github.com/mattn/go-sqlite3"
 )
 
 var o orm.Ormer
 
 func Syncdb() {
+
 	createdb()
+
 	Connect()
 	o = orm.NewOrm()
-
 	name := "default"
-
 	force := true
 
 	verbose := true
@@ -75,7 +74,6 @@ func Connect() {
 
 //创建数据库
 func createdb() {
-
 	db_type := beego.AppConfig.String("db_type")
 	db_host := beego.AppConfig.String("db_host")
 	db_port := beego.AppConfig.String("db_port")
