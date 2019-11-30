@@ -19,15 +19,16 @@ func init() {
 
 //数据库链接
 type Model struct {
-	ID         int `gorm:"primary_key" json:"id"`
-	CreatedOn  int `json:"created_on"`
-	ModifiedOn int `json:"modified_on"`
-	DeletedOn  int `json:"deleted_on"`
+	ID       int    `gorm:"primary_key" json:"id"`
+	Username string `json:"name"`
+	Password string `json:"created_by"`
+	Email    string `json:"modified_by"`
 }
 
 func ConnecTion() {
 	var dsn string
 	var err error
+	//var mo Model
 	db_type := beego.AppConfig.String("db_type")
 	db_host := beego.AppConfig.String("db_host")
 	db_port := beego.AppConfig.String("db_port")
